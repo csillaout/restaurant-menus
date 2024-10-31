@@ -1,6 +1,16 @@
-const {sequelize} = require('../db');
-const { Sequelize } = require('sequelize');
+const { sequelize } = require("../db.js");
+const { db, Model, DataTypes } = require("sequelize");
 
 // TODO - create a Menu model
+class Menu extends Model {}
 
-module.exports = {Menu};
+Menu.init({
+    title: DataTypes.STRING,
+  },
+  {
+    sequelize: db,
+    modelName: "Menu",
+  }
+);
+
+module.exports = { Menu };
